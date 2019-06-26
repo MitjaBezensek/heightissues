@@ -62,7 +62,9 @@ module powerbi.extensibility.visual {
                 fontFamily: "Segoe UI",
                 fontWeight: "normal"
             };
+            // If we use the text measurement service the issue occurs.
             let titleHeight = Math.round(textMeasurementService.measureSvgTextHeight(properties));
+            // If we use a constant number instead the issue does not occur.
             // let titleHeight = 20;
             titleElement.attr("y", Math.round(titleHeight / 2) + 2);
         }
